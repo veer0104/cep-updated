@@ -30,6 +30,9 @@
       </div>
     </div>
 
-    <script src="{{ url_for('static', path='chatbot.js') }}"></script>
+    <!-- Change the script URL -->
+<script src="{{ url_for('static', path='chatbot.js') }}"></script>
+<!-- Add this hidden div to help with debugging -->
+<div id="error-message" style="display: none; color: red;"></div>
   </body>
 </html>
