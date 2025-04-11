@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINDMATE: AI-Powered Mental Health Companion</title>
+    <link rel="stylesheet" href="static/chatbot.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-sidebar">
+        <h1>MINDMATE</h1>
+        <p>Your AI-powered mental health assistant</p>
+      </div>
+
+      <div class="chat-window">
+        <div class="chat-header">MINDMATE - Smart Chat</div>
+        <div class="chat-body" id="chat-body">
+          <div class="bot-message">Hello! How can I assist you today?</div>
+        </div>
+
+        <div class="chat-input-box">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+          />
+          <button id="send-btn" type="button">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', path='chatbot.js') }}"></script>
+  </body>
+</html>
