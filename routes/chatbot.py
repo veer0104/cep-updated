@@ -113,12 +113,13 @@ async def ai_response(query: str) -> str:
 @router.post("/")
 async def chatbot_responder(data: Message, request: Request):
     try:
-        # Uncomment below if session middleware is used
-        # context = request.session.get('incident_context', '')
-        # full_prompt = f"Context: {context}\nUser message: {data.message}" if context else data.message
-        
-        full_prompt = data.message  # Simpler version without session
-        result = await ai_response(full_prompt)
+        if not data.message.strip():
+            raise ValueError("Empty message received")
+            
+        print(f"Received message: {data.message}")  # Log incoming messages
+        result = await ai_response(data.message)
+        print(f"Generated response: {result}")  # Log AI responses
         return {'response': result}
     except Exception as e:
-        return {'error': str(e)}
+        print(f"Error processing request: {str(e)}")  # Detailed error logging
+        return {'error': str(e)}, 500
