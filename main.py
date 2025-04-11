@@ -51,7 +51,8 @@ async def serve_signup(request: Request):
 async def serve_form(request: Request):
     return templates.TemplateResponse("form.html", {"request": request})
 
-@app.get("/chatbot", response_class=HTMLResponse)
+# Change the HTML endpoint path to avoid conflict
+@app.get("/chatbot-interface", response_class=HTMLResponse)  # Changed path
 async def serve_chatbot(request: Request):
     return templates.TemplateResponse("chatbot.html", {"request": request})
 
