@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       chatBody.appendChild(loadingDiv);
 
       // Make API call to your FastAPI endpoint
-      const response = await fetch("http://127.0.0.1:8000/chatbot", {
+      const response = await fetch("http://127.0.0.1:8000/chatbot/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
